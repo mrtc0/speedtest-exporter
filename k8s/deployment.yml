@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: speedtest-exporter
+spec:
+  selector:
+    matchLabels:
+      app: speedtest-exporter
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: speedtest-exporter
+    spec:
+      containers:
+      - name: speedtest-exporter
+        image: mrtc0/speedtest_exporter:latest
+        ports:
+        - containerPort: 5000

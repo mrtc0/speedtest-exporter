@@ -1,0 +1,18 @@
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+  external_labels:
+      monitor: 'speedtest-monitor'
+
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
+scrape_configs:
+  - job_name: 'speedtest'
+
+    scrape_interval: 60s
+    scrape_timeout: 30s
+
+    static_configs:
+      - targets: ['localhost:5000']

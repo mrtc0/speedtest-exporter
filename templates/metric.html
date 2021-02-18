@@ -1,0 +1,7 @@
+# HELP SpeedTest_download_gauge Download bandwidth (Mbps).
+# TYPE SpeedTest_download_gauge gauge
+SpeedTest_download_gauge {{ result.download }}
+
+# HELP SpeedTest_upload_gauge Upload bandwidth (Mbps).
+# TYPE SpeedTest_upload_gauge gauge
+SpeedTest_upload_gauge {{ result.upload }}
